@@ -101,27 +101,6 @@ The implementation follows the OAuth2 authorization code flow with PKCE:
 5. **Authorization code exchange**: Exchanges the code for access and refresh tokens
 6. **Token validation**: Validates the response and extracts tokens
 
-## Core Components
-
-### `TeslaAuthClient`
-
-Main OAuth2 client class that handles:
-- PKCE code generation (verifier and challenge)
-- State generation for CSRF protection
-- Authorization URL construction
-- Token exchange with Tesla's OAuth endpoints
-
-### `Tokens`
-
-Container class for OAuth tokens:
-- `access_token`: Short-lived token for API access
-- `refresh_token`: Long-lived token to get new access tokens
-- `expires_in`: Token expiration time in seconds
-
-### `format_duration()`
-
-Utility function that formats token expiration time into human-readable format (e.g., "1 day 2 hours 30 minutes").
-
 ## Security Notes
 
 - The code verifier is never transmitted; only the SHA256 hash (code challenge) is sent
@@ -196,7 +175,7 @@ Check your internet connection and ensure you can access auth.tesla.com.
 
 ## License
 
-Apache-2.0/MIT (same as the original Rust implementation)
+GPL-3.0
 
 ## Credits
 
